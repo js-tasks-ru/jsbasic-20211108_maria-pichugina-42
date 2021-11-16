@@ -1,9 +1,9 @@
-function factorial(i) {
-  let a = i;
-  if (!i) return 1;
-  while(i > 1) {
-  i--;
-  a *= i;
+function factorial(n) {
+  let a = n;
+  if (!n) return 1;
+  while(n > 1) {
+  n--;
+  a *= n;
   };
   return a;
 }
