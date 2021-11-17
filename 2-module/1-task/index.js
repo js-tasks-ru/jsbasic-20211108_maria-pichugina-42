@@ -10,5 +10,3 @@ function sumSalary(salaries) {
      return sum
 
  };
-
-sumSalary(salaries)
