@@ -1,16 +1,18 @@
 function highlight(table) {
   const trows = table.lastElementChild.getElementsByTagName("tr");
   for (const element of trows) {
-    if (element.lastElementChild.hasAttribute("data-available")) {
-      if (element.lastElementChild.getAttribute("data-available") === "true") {
+    const tds = element.getElementsByTagName("td");
+    const lastTd = tds[tds.length-1];
+    if ("available" in lastTd.dataset === true) {
+      if (lastTd.dataset.available == "true") {
         element.classList.add("available");
       } else {
         element.classList.add("unavailable");
       }
     } else {
-      element.setAttribute("hidden", "");
+      element.hidden = true;
     }
-    const tds = element.getElementsByTagName("td");
+    
     for (const td of tds) {
       const n = Number(td.innerHTML);
       if (isFinite(n) && n < 18) {
